@@ -176,9 +176,17 @@ See [here](ssh.md) for different types of SSH connection with respect to your OS
 
 1. What is the ``grep``command?
 
+The grep command is used to search text. It searches the given file for lines containing a match to the given strings or words. Retrieved from: https://www.cyberciti.biz/faq/howto-use-grep-command-in-linux-unix/
+
 2. What is the meaning of ``#!/bin/python`` at the start of scripts?
 
+It is a convention so the shell knows which interpreter to use when running the file. In this case we are telling the shell to use python but it could be a different one.
+
 3. Download using ``wget`` the [*bsds500*](https://www2.eecs.berkeley.edu/Research/Projects/CS/vision/grouping/resources.html#bsds500) image segmentation database, and decompress it using ``tar`` (keep it in you hard drive, we will come back over this data in a few weeks).
+
+Here we show how it was downloaded:
+
+![screenshot_wget](cnavarrete72.github.com/IBIO4490-Carlos/images/screenshot_wget.jpg)
  
 4. What is the disk size of the uncompressed dataset, How many images are in the directory 'BSR/BSDS500/data/images'?
  
