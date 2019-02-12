@@ -187,6 +187,10 @@ It is a convention so the shell knows which interpreter to use when running the 
 Here we show how it was downloaded:
 
 ![screenshot_wget](images/screenshot_wget.png)
+
+And here how it was untared:
+
+![screenshot_tar](images/screenshot_tar.png)
  
 4. What is the disk size of the uncompressed dataset, How many images are in the directory 'BSR/BSDS500/data/images'?
  
