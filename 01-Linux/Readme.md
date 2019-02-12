@@ -186,7 +186,7 @@ It is a convention so the shell knows which interpreter to use when running the 
 
 Here we show how it was downloaded:
 
-![screenshot_wget](cnavarrete72.github.com/IBIO4490-Carlos/images/screenshot_wget.jpg)
+![screenshot_wget](cnavarrete72.github.com/IBIO4490-Carlos/01-Linux/images/screenshot_wget.png)
  
 4. What is the disk size of the uncompressed dataset, How many images are in the directory 'BSR/BSDS500/data/images'?
  
