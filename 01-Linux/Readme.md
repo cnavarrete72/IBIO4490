@@ -193,12 +193,54 @@ And here how it was untared:
 ![screenshot_tar](images/screenshot_tar.png)
  
 4. What is the disk size of the uncompressed dataset, How many images are in the directory 'BSR/BSDS500/data/images'?
+
+Here we display the size in kilobytes. We use the command du -k
+
+![screenshot_size](images/screenshot_size.png)
+
+And here we show the number of images in the directory. We use the command find . -name "*.jpg" | wc -l. We want to find all the jpg images in the directory.
+
+![screenshot_number](images/screenshot_number.png)
  
-5. What are all the different resolutions? What is their format? Tip: use ``awk``, ``sort``, ``uniq`` 
+5. What are all the different resolutions? What is their format? Tip: use ``awk``, ``sort``, ``uniq``
+
+We can use the following commands: find . -name "*.jpg" -exec identify {} \; | awk '{print $3;}' | sort | uniq
+
+![screenshot_formats](images/screenshot_formats.png)
 
 6. How many of them are in *landscape* orientation (opposed to *portrait*)? Tip: use ``awk`` and ``cut``
+
+Landscape means they are 321x481. x: 481 and y: 321
+Here we show the number of images of both types. First landscape and then portrait.
+
+![screenshot_landscape](images/screenshot_landscape.png)
  
 7. Crop all images to make them square (256x256) and save them in a different folder. Tip: do not forget about  [imagemagick](http://www.imagemagick.org/script/index.php).
+Este script realiza la tarea
+
+```bash
+#!/bin/bash
+
+cd ~/ComputerVision/IBIO4490-Carlos/
+rm -r resized_images
+mkdir resized_images
+cd resized_images/
+mkdir train
+mkdir test
+mkdir val
+
+cd ~/ComputerVision/IBIO4490-Carlos/BSR/BSDS500/data/images/train/
+
+mogrify -path ~/ComputerVision/IBIO4490-Carlos/resized_images/train/ -format "Resized.jpg" -resize 256x256 *.jpg
+
+cd ~/ComputerVision/IBIO4490-Carlos/BSR/BSDS500/data/images/test/
+
+mogrify -path ~/ComputerVision/IBIO4490-Carlos/resized_images/test/ -format "Resized.jpg" -resize 256x256 *.jpg
+
+cd ~/ComputerVision/IBIO4490-Carlos/BSR/BSDS500/data/images/val/
+
+mogrify -path ~/ComputerVision/IBIO4490-Carlos/resized_images/val/ -format "Resized.jpg" -resize 256x256 *.jpg
+```
 
 
 # Report
